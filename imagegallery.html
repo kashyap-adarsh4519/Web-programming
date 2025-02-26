@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Photo Gallery</title>
+    <style>
+        h1 {
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+            color: white; /* Corrected here */
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        /* Animation for gallery items */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .gallery-item:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .gallery-item:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DRIZZLE IN THE DROUGHT </h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="C:\Users\Kedar\Documents\adarsh\wp\image gallery\crick1.jpg"alt="Image 1">
+        </div>
+ <div class="gallery-item">
+            <img src="C:\Users\Kedar\Documents\adarsh\wp\image gallery\crick2.jpg" alt="Image 4">
+        </div>
+                <div class="gallery-item">
+            <img src="C:\Users\Kedar\Documents\adarsh\wp\image gallery\crick3.jpg"alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="C:\Users\Kedar\Documents\adarsh\wp\image gallery\crick4.jpg" alt="Image 4">
+        </div>
+        <div class="gallery-item">
+            <img src="C:\Users\Kedar\Documents\adarsh\wp\image gallery\crick5.jpg" alt="Image 5">
+        </div>
+        <div class="gallery-item">
+            <img src="C:\Users\Kedar\Documents\adarsh\wp\image gallery\crick6.jpg" alt="Image 6">
+        </div>
+    </div>
+</body>
+
+</html>
